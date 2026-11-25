@@ -20,6 +20,7 @@ La billetera reúne el saldo de cada moneda (**ARS, USD y EUR**), muestra la tas
 | Capa | Tecnología |
 | --- | --- |
 | Frontend | React + TypeScript + Vite |
+| Estilos | Tailwind CSS v4 |
 | Deploy | Vercel |
 | Testing | Vitest |
 | Backend (repo aparte) | Express + TypeScript + PostgreSQL (Railway), JWT |
@@ -29,8 +30,8 @@ La billetera reúne el saldo de cada moneda (**ARS, USD y EUR**), muestra la tas
 **Requisitos:** Node.js 20.19+ o 22.12+ (lo pide Vite) y npm.
 
 ```bash
-git clone https://github.com/Valenii/Viagem-Frontend.git
-cd Viagem-Frontend
+git clone https://github.com/Valenii/viagem-frontend.git
+cd viagem-frontend
 npm install
 npm run dev
 ```
@@ -43,6 +44,19 @@ La app queda en http://localhost:5173.
 | `npm run build` | Revisa los tipos con TypeScript y genera la versión de producción en `dist/` |
 | `npm run preview` | Sirve lo que quedó en `dist/` para probarlo antes de deployar |
 | `npm run lint` | Revisa el código con oxlint |
+
+## Estilos
+
+Tailwind CSS v4, sin `tailwind.config.js`: la configuración está en `src/index.css`.
+
+- **Colores:** usar las clases de la paleta, que cambian solas en modo oscuro.
+  - `bg-primary` / `text-on-primary`, `bg-primary-soft`
+  - `bg-accent` / `text-on-accent` (lima: solo para lo que tiene que resaltar)
+  - `bg-page`, `bg-surface`, `text-main`, `text-muted`, `border-line`
+  - `text-success`, `text-error`, `text-warning`
+- **No usar `dark:`**: el modo oscuro ya está en las variables.
+- **Modo:** sigue al sistema; `data-theme="dark"` o `"light"` en `<html>` lo fuerza.
+- **Tipografías:** Inter (texto, por defecto) e Inter Tight 800 (`font-display`, ya aplicada a `h1`–`h3`). Montos con `tabular-nums`.
 
 ## Flujo de trabajo
 
