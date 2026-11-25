@@ -3,31 +3,62 @@
 /* 1. Valores del modo claro (el que vale por defecto) */
 :root {
   --primary: #55286f;
+  --primary-strong: #3e1c52;
   --on-primary: #ffffff;
   --primary-soft: #efe7f5;
+  --primary-soft-line: #d9c6e8;
+  --on-primary-soft: #3e1c52;
   --accent: #c5f26b;
   --on-accent: #1c1222;
+  --hero: #55286f;
+  --on-hero: #ffffff;
+  --hero-muted: #e3d3ee;
+  --hero-sub: #6b3a8a;
+  --hero-line: #8a5ca8;
   --page: #f8f6fa;
   --surface: #ffffff;
+  --surface-2: #f1ecf5;
+  --track: #e9e3ee;
   --main: #1c1222;
   --muted: #665a70;
+  --faint: #7a6e84;
   --line: #e4ddea;
+  --line-strong: #d3c8dc;
+  --disabled: #e4ddea;
+  --on-disabled: #7a6e84;
   --success: #1e7f4f;
   --error: #c0362c;
+  --error-soft: #ffe3e0;
+  --on-error-soft: #8a1c14;
   --warning: #955800;
   color-scheme: light;
 }
 
-/* 2. Modo oscuro elegido a mano: <html data-theme="dark"> */
+/* 2. Modo oscuro elegido a mano: <html data-theme="dark">.
+   Lima, texto sobre lima y el aviso de error son iguales en los dos modos. */
 :root[data-theme="dark"] {
   --primary: #b993d6;
-  --on-primary: #120c16;
+  --primary-strong: #d9c2ea;
+  --on-primary: #1c1222;
   --primary-soft: #2e1f3a;
+  --primary-soft-line: #4a3657;
+  --on-primary-soft: #e8daf3;
+  --hero: #2e1f3a;
+  --on-hero: #f4eff7;
+  --hero-muted: #c9b0de;
+  --hero-sub: #3d2a4c;
+  --hero-line: #5a4569;
   --page: #120c16;
   --surface: #1d1523;
+  --surface-2: #261c2e;
+  --track: #2a2032;
   --main: #f4eff7;
   --muted: #a99bb5;
+  --faint: #8f819b;
   --line: #362a40;
+  --line-strong: #4a3657;
+  --disabled: #2a2032;
+  --on-disabled: #8f819b;
   --success: #4cc38a;
   --error: #ff7a6e;
   --warning: #f2b53c;
@@ -39,13 +70,27 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --primary: #b993d6;
-    --on-primary: #120c16;
+    --primary-strong: #d9c2ea;
+    --on-primary: #1c1222;
     --primary-soft: #2e1f3a;
+    --primary-soft-line: #4a3657;
+    --on-primary-soft: #e8daf3;
+    --hero: #2e1f3a;
+    --on-hero: #f4eff7;
+    --hero-muted: #c9b0de;
+    --hero-sub: #3d2a4c;
+    --hero-line: #5a4569;
     --page: #120c16;
     --surface: #1d1523;
+    --surface-2: #261c2e;
+    --track: #2a2032;
     --main: #f4eff7;
     --muted: #a99bb5;
+    --faint: #8f819b;
     --line: #362a40;
+    --line-strong: #4a3657;
+    --disabled: #2a2032;
+    --on-disabled: #8f819b;
     --success: #4cc38a;
     --error: #ff7a6e;
     --warning: #f2b53c;
@@ -57,17 +102,33 @@
    "inline" hace que la clase lea la variable en el momento, así cambia con el modo. */
 @theme inline {
   --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
   --color-on-primary: var(--on-primary);
   --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-line: var(--primary-soft-line);
+  --color-on-primary-soft: var(--on-primary-soft);
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
+  --color-hero: var(--hero);
+  --color-on-hero: var(--on-hero);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-sub: var(--hero-sub);
+  --color-hero-line: var(--hero-line);
   --color-page: var(--page);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-track: var(--track);
   --color-main: var(--main);
   --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-disabled: var(--disabled);
+  --color-on-disabled: var(--on-disabled);
   --color-success: var(--success);
   --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+  --color-on-error-soft: var(--on-error-soft);
   --color-warning: var(--warning);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
