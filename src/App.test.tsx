@@ -1,20 +1,34 @@
-// Test de ejemplo: se reemplaza cuando App deje de ser la pantalla temporal.
-// Sirve para comprobar que el setup de Vitest + Testing Library anda y como modelo.
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import App from './App.tsx'
 
-describe('App', () => {
-  it('muestra el nombre de la app como título principal', () => {
-    render(<App />)
+function renderAt(path: string) {
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <App />
+    </MemoryRouter>,
+  )
+}
 
-    expect(screen.getByRole('heading', { level: 1, name: 'Viagem' })).toBeInTheDocument()
+describe('App', () => {
+  it.each([
+    ['/', 'Inicio'],
+    ['/trade', 'Operar'],
+    ['/history', 'Historial'],
+    ['/assistant', 'Asistente'],
+    ['/login', 'Ingresar'],
+    ['/register', 'Crear cuenta'],
+  ])('en %s muestra la página %s', (path, title) => {
+    renderAt(path)
+
+    expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument()
   })
 
-  it('muestra los botones Operar y Confirmar', () => {
-    render(<App />)
+  it('en una ruta que no existe muestra la página de no encontrada', () => {
+    renderAt('/no-existe')
 
-    expect(screen.getByRole('button', { name: 'Operar' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Confirmar' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'No encontramos esta página' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Volver al inicio' })).toHaveAttribute('href', '/')
   })
 })
