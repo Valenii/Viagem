@@ -75,6 +75,22 @@ Vitest + Testing Library, sobre un navegador simulado (jsdom).
 - Importar `describe`, `it` y `expect` desde `vitest` (no son globales).
 - Configuración: bloque `test` en `vite.config.ts` y `src/test/setup.ts`.
 
+## Rutas
+
+React Router (modo declarativo): `BrowserRouter` en `src/main.tsx` y las rutas en `src/App.tsx`. Las páginas están en `src/pages/`.
+
+| Ruta | Página | Pantalla |
+| --- | --- | --- |
+| `/login` | `Login` | Ingresar |
+| `/register` | `Register` | Crear cuenta |
+| `/` | `Home` | Inicio |
+| `/trade` | `Trade` | Operar (comprar, vender e intercambiar) |
+| `/history` | `History` | Historial |
+| `/assistant` | `Assistant` | Asistente |
+| cualquier otra | `NotFound` | No encontrada |
+
+`/login` y `/register` van en un grupo de rutas y las otras cuatro en otro, para que cada grupo tenga su layout. En Vercel, `vercel.json` manda toda ruta a `index.html` (salvo `/api/`), así se puede entrar o recargar en cualquier página.
+
 ## Flujo de trabajo
 
 - `main`: versión estable. **Solo se actualiza con Pull Request** desde `dev`.
