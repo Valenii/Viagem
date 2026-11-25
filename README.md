@@ -29,8 +29,8 @@ La billetera reúne el saldo de cada moneda (**ARS, USD y EUR**), muestra la tas
 **Requisitos:** Node.js 20.19+ o 22.12+ (lo pide Vite) y npm.
 
 ```bash
-git clone https://github.com/Valenii/Viagem_Frontend.git
-cd Viagem_Frontend
+git clone https://github.com/Valenii/Viagem-Frontend.git
+cd Viagem-Frontend
 npm install
 npm run dev
 ```
