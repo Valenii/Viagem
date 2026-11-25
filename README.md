@@ -52,10 +52,16 @@ La app queda en http://localhost:5173.
 Tailwind CSS v4, sin `tailwind.config.js`: la configuración está en `src/index.css`.
 
 - **Colores:** usar las clases de la paleta, que cambian solas en modo oscuro.
-  - `bg-primary` / `text-on-primary`, `bg-primary-soft`
-  - `bg-accent` / `text-on-accent` (lima: solo para lo que tiene que resaltar)
-  - `bg-page`, `bg-surface`, `text-main`, `text-muted`, `border-line`
-  - `text-success`, `text-error`, `text-warning`
+  - Violeta: `bg-primary` / `text-on-primary`, `text-primary-strong` (hover)
+  - Violeta suave (avisos, chips): `bg-primary-soft`, `text-on-primary-soft`, `border-primary-soft-line`
+  - Lima, solo para lo que tiene que resaltar: `bg-accent` / `text-on-accent`
+  - Tarjeta violeta y menú lateral: `bg-hero`, `text-on-hero`, `text-hero-muted`, `bg-hero-sub` (botones e inputs adentro), `border-hero-line`
+  - Fondos: `bg-page`, `bg-surface`, `bg-surface-2` (cuadrito de moneda), `bg-track` (fondo de pestañas)
+  - Textos: `text-main`, `text-muted`, `text-faint`
+  - Bordes: `border-line` (tarjetas), `border-line-strong` (inputs)
+  - Deshabilitado: `bg-disabled` / `text-on-disabled`
+  - Estados: `text-success`, `text-error`, `text-warning`, y el aviso `bg-error-soft` / `text-on-error-soft`
+- **Si un color del diseño no está en la lista**, se agrega en `src/index.css` (los dos modos). Nunca un hex suelto como `bg-[#6B3A8A]`.
 - **No usar `dark:`**: el modo oscuro ya está en las variables.
 - **Modo:** sigue al sistema; `data-theme="dark"` o `"light"` en `<html>` lo fuerza.
 - **Tipografías:** Inter (texto, por defecto) e Inter Tight 800 (`font-display`, ya aplicada a `h1`–`h3`). Montos con `tabular-nums`.
