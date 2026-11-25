@@ -26,12 +26,23 @@ La billetera reúne el saldo de cada moneda (**ARS, USD y EUR**), muestra la tas
 
 ## Cómo correrlo
 
-> Se completa cuando esté inicializado el proyecto de Vite.
+**Requisitos:** Node.js 20.19+ o 22.12+ (lo pide Vite) y npm.
 
 ```bash
+git clone https://github.com/Valenii/Viagem-Frontend.git
+cd Viagem-Frontend
 npm install
 npm run dev
 ```
+
+La app queda en http://localhost:5173.
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo, se recarga al guardar |
+| `npm run build` | Revisa los tipos con TypeScript y genera la versión de producción en `dist/` |
+| `npm run preview` | Sirve lo que quedó en `dist/` para probarlo antes de deployar |
+| `npm run lint` | Revisa el código con oxlint |
 
 ## Flujo de trabajo
 
