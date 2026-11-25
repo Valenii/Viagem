@@ -1,24 +1,26 @@
-function App() {
+import { Outlet, Route, Routes } from 'react-router'
+import { Assistant } from './pages/Assistant.tsx'
+import { History } from './pages/History.tsx'
+import { Home } from './pages/Home.tsx'
+import { Login } from './pages/Login.tsx'
+import { NotFound } from './pages/NotFound.tsx'
+import { Register } from './pages/Register.tsx'
+import { Trade } from './pages/Trade.tsx'
+
+export default function App() {
   return (
-    <main className="mx-auto flex min-h-svh max-w-md flex-col justify-center gap-6 p-4">
-      <h1 className="text-4xl text-primary">Viagem</h1>
-      <p className="text-muted">Billetera multi-moneda para viajeros.</p>
-
-      <section className="rounded-2xl border border-line bg-surface p-6">
-        <p className="text-sm text-muted">Saldo en USD</p>
-        <p className="font-display text-3xl font-extrabold tabular-nums">1.250,00</p>
-      </section>
-
-      <div className="flex gap-3">
-        <button type="button" className="rounded-full bg-primary px-5 py-2.5 font-semibold text-on-primary">
-          Operar
-        </button>
-        <button type="button" className="rounded-full bg-accent px-5 py-2.5 font-semibold text-on-accent">
-          Confirmar
-        </button>
-      </div>
-    </main>
+    <Routes>
+      <Route element={<Outlet />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
+      <Route element={<Outlet />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/trade" element={<Trade />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/assistant" element={<Assistant />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
-
-export default App
