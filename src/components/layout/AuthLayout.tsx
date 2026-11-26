@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router'
-import { Logo } from '../ui/Logo'
-import { Notice } from '../ui/Notice'
-import { ThemeToggle } from '../ui/ThemeToggle'
+import { Logo } from '../ui/Logo.tsx'
+import { Notice } from '../ui/Notice.tsx'
+import { ThemeToggle } from '../ui/ThemeToggle.tsx'
 
 export function AuthLayout() {
   return (

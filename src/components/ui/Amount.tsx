@@ -1,4 +1,4 @@
-import type { Currency } from '../../types/money'
+import type { Currency } from '../../types/money.ts'
 
 export interface AmountProps {
   value: string

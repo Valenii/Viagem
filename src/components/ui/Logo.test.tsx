@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Logo } from './Logo'
+import { Logo } from './Logo.tsx'
 
 describe('Logo', () => {
   it('con withText muestra el texto Viagem', () => {

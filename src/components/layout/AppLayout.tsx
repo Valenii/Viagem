@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { NavLink, Outlet } from 'react-router'
-import { Logo } from '../ui/Logo'
-import { ThemeToggle } from '../ui/ThemeToggle'
+import { Logo } from '../ui/Logo.tsx'
+import { ThemeToggle } from '../ui/ThemeToggle.tsx'
 
 export interface AppLayoutProps {
   onLogout: () => void

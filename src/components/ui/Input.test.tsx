@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Input } from './Input'
+import { Input } from './Input.tsx'
 
 describe('Input', () => {
   it('se encuentra por su label', () => {

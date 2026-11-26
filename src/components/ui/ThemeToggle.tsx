@@ -1,4 +1,4 @@
-import { useTheme } from '../../hooks/useTheme'
+import { useTheme } from '../../hooks/useTheme.ts'
 
 export interface ThemeToggleProps {
   variant?: 'icon' | 'full'
