@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Notice } from './Notice'
+import { Notice } from './Notice.tsx'
 
 describe('Notice', () => {
   it('muestra el texto', () => {

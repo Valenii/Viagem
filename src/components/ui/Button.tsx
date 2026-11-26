@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from 'react'
-import { buttonClasses } from './buttonClasses'
+import { buttonClasses } from './buttonClasses.ts'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'accent' | 'secondary' | 'on-hero'

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Loading } from './Loading'
+import { Loading } from './Loading.tsx'
 
 describe('Loading', () => {
   it('anuncia que está cargando', () => {

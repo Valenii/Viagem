@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
-import type { ButtonProps } from './Button'
-import { buttonClasses } from './buttonClasses'
+import type { ButtonProps } from './Button.tsx'
+import { buttonClasses } from './buttonClasses.ts'
 
 export interface ButtonLinkProps {
   to: string

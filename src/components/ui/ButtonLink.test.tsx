@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
-import { ButtonLink } from './ButtonLink'
+import { ButtonLink } from './ButtonLink.tsx'
 
 describe('ButtonLink', () => {
   it('tiene el href correcto', () => {

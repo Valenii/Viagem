@@ -1,4 +1,4 @@
-import type { ButtonProps } from './Button'
+import type { ButtonProps } from './Button.tsx'
 
 interface ButtonClassOptions {
   variant?: ButtonProps['variant']

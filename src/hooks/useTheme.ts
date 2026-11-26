@@ -28,7 +28,8 @@ function systemTheme(): 'light' | 'dark' {
 
 export function useTheme() {
   const [preference, setPreference] = useState<ThemePreference>(readPreference)
-  const resolved = preference === 'system' ? systemTheme() : preference
+  const [system, setSystem] = useState<'light' | 'dark'>(systemTheme)
+  const resolved = preference === 'system' ? system : preference
 
   useEffect(() => {
     if (preference === 'system') {
@@ -37,6 +38,14 @@ export function useTheme() {
       document.documentElement.setAttribute('data-theme', preference)
     }
   }, [preference])
+
+  useEffect(() => {
+    const media = window.matchMedia?.('(prefers-color-scheme: dark)')
+    if (!media) return
+    const update = () => setSystem(media.matches ? 'dark' : 'light')
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
 
   useEffect(() => {
     const sync = () => setPreference(readPreference())

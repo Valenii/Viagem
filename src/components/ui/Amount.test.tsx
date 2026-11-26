@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { Amount } from './Amount'
+import { Amount } from './Amount.tsx'
 
 describe('Amount', () => {
   it('formatea el monto con formato argentino', () => {

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router'
-import { AuthLayout } from './AuthLayout'
+import { AuthLayout } from './AuthLayout.tsx'
 
 function renderAuthLayout() {
   render(
