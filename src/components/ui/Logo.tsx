@@ -26,7 +26,7 @@ export function Logo({ size = 40, withText = false }: LogoProps) {
         <circle cx="29" cy="12" r="3" fill="var(--accent)" />
       </svg>
       {withText && (
-        <span className="font-display text-xl font-extrabold text-main">Viagem</span>
+        <span className="font-display text-xl font-extrabold">Viagem</span>
       )}
     </span>
   )
