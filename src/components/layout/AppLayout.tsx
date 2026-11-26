@@ -25,7 +25,8 @@ const navItems: { to: string; label: string; icon: ReactNode }[] = [
     label: 'Inicio',
     icon: (
       <svg {...iconProps}>
-        <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+        <path d="M3 11l9-7 9 7" />
+        <path d="M5 10v10h14V10" />
       </svg>
     ),
   },
@@ -34,7 +35,8 @@ const navItems: { to: string; label: string; icon: ReactNode }[] = [
     label: 'Operar',
     icon: (
       <svg {...iconProps}>
-        <path d="M4 7h16l-4-4M20 17H4l4 4" />
+        <path d="M7 7h13l-4-4" />
+        <path d="M17 17H4l4 4" />
       </svg>
     ),
   },
@@ -62,7 +64,9 @@ const navItems: { to: string; label: string; icon: ReactNode }[] = [
 function LogoutIcon() {
   return (
     <svg {...iconProps} width={20} height={20}>
-      <path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l-5-5 5-5M5 12h11" />
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <path d="M16 17l5-5-5-5" />
+      <path d="M21 12H9" />
     </svg>
   )
 }
