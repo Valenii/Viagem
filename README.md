@@ -89,7 +89,15 @@ React Router (modo declarativo): `BrowserRouter` en `src/main.tsx` y las rutas e
 | `/assistant` | `Assistant` | Asistente |
 | cualquier otra | `NotFound` | No encontrada |
 
-`/login` y `/register` van en un grupo de rutas y las otras cuatro en otro, para que cada grupo tenga su layout. En Vercel, `vercel.json` manda toda ruta a `index.html` (salvo `/api/`), así se puede entrar o recargar en cualquier página.
+`/login` y `/register` van en un grupo de rutas y las otras cuatro en otro, para que cada grupo tenga su layout (`AuthLayout` y `AppLayout`). En Vercel, `vercel.json` manda toda ruta a `index.html` (salvo `/api/`), así se puede entrar o recargar en cualquier página.
+
+## Sesión
+
+- `AuthProvider` (`src/context/`) guarda el token JWT en `localStorage` con la clave `viagem-token`. Se lee con `useAuth()` (`src/hooks/useAuth.ts`): `token`, `isAuthenticated`, `signIn(token)` y `logout()`.
+- `signIn` solo guarda la sesión. La llamada al back para obtener el token va en un service, que después llama a `signIn`.
+- Rutas protegidas (`src/routes/ProtectedRoute.tsx`): sin sesión, Inicio, Operar, Historial y Asistente llevan a `/login`, y guardan en `state.from` la ruta a la que se quería ir.
+- Rutas públicas (`src/routes/PublicOnlyRoute.tsx`): con sesión, `/login` y `/register` llevan a `/`.
+- Para probar con sesión mientras no hay formulario de login: en la consola del navegador, `localStorage.setItem('viagem-token', 'prueba')` y recargar.
 
 ## Flujo de trabajo
 
