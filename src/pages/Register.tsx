@@ -1,3 +1,28 @@
+import { useState } from 'react'
+import { RegisterForm } from '../components/auth/RegisterForm'
+
+function fakeRequest() {
+  return new Promise<void>((_resolve, reject) => {
+    setTimeout(() => reject(new Error('Sin conexión con el servidor')), 1000)
+  })
+}
+
 export function Register() {
-  return <h1>Crear cuenta</h1>
+  const [error, setError] = useState<string>()
+
+  async function handleSubmit() {
+    setError(undefined)
+    try {
+      await fakeRequest()
+    } catch {
+      setError('No pudimos crear tu cuenta. Probá de nuevo en un rato.')
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-6 py-6">
+      <h1 className="text-2xl">Crear cuenta</h1>
+      <RegisterForm onSubmit={handleSubmit} error={error} />
+    </div>
+  )
 }
