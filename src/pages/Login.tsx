@@ -15,7 +15,7 @@ export function Login() {
     try {
       await fakeRequest()
     } catch {
-      setError('No pudimos ingresar. Probá de nuevo en un rato.')
+     setError('Email o contraseña incorrectos')
     }
   }
 
